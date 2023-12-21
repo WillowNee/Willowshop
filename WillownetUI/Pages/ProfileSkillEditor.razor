@@ -1,0 +1,104 @@
+﻿@page "/fetchdata"
+@inject HttpClient Http
+
+<PageTitle>Skills</PageTitle>
+
+@if (skills == null)
+{
+    <p><em>Loading</em></p>
+}
+else
+{
+    <table class="table">
+        <tbody>
+            @foreach (var skill in skills)
+            {
+                @if (skill.Level >= 0 && skill.Level < skillNames.Length)
+                {
+                    <tr>
+                        <td>
+                            @skill.Name
+                        </td>
+                        <td>
+                            @skillNames[skill.Level]
+                        </td>
+                    </tr>
+                }
+            }
+            <tr>
+                <td class="autocomplete">
+                    <input type="text" @bind="editItem.Name" @oninput="Filter" @onblur="CancelFilter"/>
+                    @if (skillsDict != null)
+                    {
+                        <ul class="options">
+                        @foreach (var skill in skillsDict)
+                        {
+                            <li @onclick="() => SelectItem(skill)" value="@skill">@skill</li>
+                        }
+                        </ul>
+                    }
+                </td>
+                <td>
+                    <select @bind="editItem.Level">
+                        @for (int i = 0; i < skillNames.Length; i++)
+                        {
+                            <option value="@i">@skillNames[i]</option>
+                        }
+                    </select>
+                </td>
+                <td>
+                    <button class="button" @onclick="SaveItem">Add</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<Skill>? skills = null;
+    private string[] skillNames = { "Rookie", "Low", "Intermediate", "Expert" };
+    private Skill editItem = new Skill();
+    private List<string>? skillsDict = null;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var result = await Http.GetFromJsonAsync<List<Skill>>("/skills/my");
+        if (result != null)
+            skills = result.ToList();
+    }
+
+    private async Task SaveItem()
+    {
+        await Http.PutAsJsonAsync<Skill>("/skills/add", editItem);
+        skills?.Add(editItem);
+        editItem = new Skill();
+    }
+
+    private void SelectItem(string skillName)
+    {
+        this.editItem.Name = skillName;
+        this.skillsDict = null;
+    }
+
+    private async Task CancelFilter()
+    {
+        await Task.Delay(200);
+        this.skillsDict = null;
+    }
+
+    private async Task Filter(ChangeEventArgs e)
+    {
+        string? search = e.Value?.ToString();
+
+        if (search?.Length > 0)
+            skillsDict = await Http.GetFromJsonAsync<List<string>>("/skills/search/" + search);
+        else
+            skillsDict = null;
+    }
+
+    public class Skill
+    {
+        public string? Name { get; set; }
+        public int Level { get; set; }
+    }
+}
