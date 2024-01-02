@@ -1,38 +1,34 @@
 html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
     font-size: 16px;
-  }
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    font-family: 'Raleway', serif;
 }
 
 .error, .validation-summary-errors {
-    color: red;
+    color: red
 }
 
-
-element.style {
+a {
+    color: #DD585A;
 }
 
-.button:hover {
-    color: white;
-    text-decoration: none;
-    background: #2980b9;
+h1 {
+    font-size: 2.3rem
+}
+
+.nav-link {
+    color: #DD585A;
 }
 
 .button {
@@ -44,40 +40,98 @@ element.style {
     height: 36px;
     line-height: 30px;
     text-align: center;
-    background-color: #d35400;
+    background-color: #DD585A;
     font-style: normal;
     text-transform: uppercase;
     border: 0;
     outline: none;
 }
 
-.form label {
-    display: block;
+header {
+    background: URL('/data/bg.jpg') no-repeat left top;
 }
 
-.form input {
+footer {
+    padding-bottom: 20px;
+    color: #555;
+    background: URL('/data/bg.jpg') no-repeat left top;
+}
+
+.footer h4 {
+    margin: 30px 0px 12px 0px;
+    text-shadow: 1px 1px #eee;
+    color: #000;
+}
+
+.content {
+    min-height: 300px;
+}
+
+.current-price {
+    font-size: 120%;
+    text-align: center;
+}
+
+.book-card .card-title {
+    height: 50px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.card.book-card {
+    background: #f6fbff;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 4px;
+}
+
+.card.book-card:hover {
+    box-shadow: 1px 0px 5px #ccc;
+}
+
+.card.book-card .card-img-top {
+    padding: 4px;
+}
+
+.product-image {
+    width: 100%;
+    box-shadow: 0px 10px 10px #ccc;
+}
+
+.authors-list {
+    margin: 10px 0px;
+    font-size: 120%;
+    font-family: cursive;
+    font-style: italic;
+}
+
+.author-image {
+    border-radius: 100px;
+}
+
+
+.navbar-light .navbar-nav .nav-link {
+    color: #DD585A;
+}
+
+.homeimage {
     width: 100%;
 }
 
-.profileimage {
-    width: 100%;
+
+.homeblock {
+    padding: 30px 0px;
 }
 
-.autocomplete {
-    position: relative;
-}
-
-.autocomplete .options {
-    position: absolute;
-    top: 40px;
-    z-index: 999;
-    margin: 0px;
-    padding: 0px;
-}
-
-.autocomplete .options li {
-    background: #fff;
-    border: 1px solid #ccc;
-    list-style: none;
+.breadcrump {
     padding: 4px 12px;
+    text-align: right;
+    margin-bottom: 20px;
+}
+
+.block {
+    background: #f6fbff;
+    border: 1px solid #e6ebef;
 }

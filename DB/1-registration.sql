@@ -24,9 +24,7 @@ create table if not exists EmailQueue (
 );
 
 
-create index if not exists IX_AppUser_Email on AppUser(
-	Email
-);
+create index if not exists IX_AppUser_Email on AppUser(Email);
 
 alter table AppUser drop if exists FirstName;
 alter table AppUser drop if exists LastName;

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Willowstore")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+092104c14b8f04554671b11c2a69fc8e6e33a660")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8e96838af172d30d9abfc4b5eed66e8c186dd253")]
 [assembly: System.Reflection.AssemblyProductAttribute("Willowstore")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Willowstore")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

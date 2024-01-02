@@ -1,5 +1,5 @@
-using Microsoft.AspNetCore.Builder;
 using Willowstore.BL.Auth;
+using Willowstore.BL.Catalog;
 using Willowstore.BL.General;
 using Willowstore.DAL;
 
@@ -14,10 +14,16 @@ builder.Services.AddScoped<ICurrentUser, CurrentUser>();
 builder.Services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 builder.Services.AddScoped<IDbSession, DbSession>();
 builder.Services.AddScoped<IWebCookie, WebCookie>();
+builder.Services.AddSingleton<IAuthor, Author>();
+builder.Services.AddSingleton<IProduct, Product>();
+
 
 builder.Services.AddSingleton<IAuthDAL, AuthDAL>();
 builder.Services.AddSingleton<IDbSessionDAL, DbSessionDAL>();
 builder.Services.AddSingleton<IUserTokenDAL, UserTokenDAL>();
+builder.Services.AddSingleton<IProductDAL, ProductDAL>();
+builder.Services.AddSingleton<IAuthorDAL, AuthorDAL>();
+builder.Services.AddSingleton<IProductSearchDAL, ProductSearchDAL>();
 
 builder.Services.AddMvc();
 
@@ -30,7 +36,6 @@ if (!app.Environment.IsDevelopment())
     app.UseExceptionHandler("/Home/Error");
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
-    app.UseWebAssemblyDebugging();
 }
 
 app.UseHttpsRedirection();

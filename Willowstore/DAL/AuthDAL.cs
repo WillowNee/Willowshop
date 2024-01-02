@@ -39,8 +39,7 @@ namespace Willowstore.DAL
                     select ar.AppRoleId, ar.Abbreviation, ar.RoleName
                     from AppRole ar
 	                    join AppUserAppRole au on au.AppRoleId = ar.AppRoleId
-                    where au.AppUserId = @appUserId
-                ", new { appUserId = appUserId });
+                    where au.AppUserId = @appUserId", new { appUserId = appUserId });
         }
     }
 }

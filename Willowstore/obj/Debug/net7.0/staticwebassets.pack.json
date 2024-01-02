@@ -9,6 +9,14 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "C:\\Users\\nakks\\source\\repos\\Projects\\Willowstore\\Willowstore\\wwwroot\\data\\Logo_BHV_2023.png",
+      "PackagePath": "staticwebassets\\data\\Logo_BHV_2023.png"
+    },
+    {
+      "Id": "C:\\Users\\nakks\\source\\repos\\Projects\\Willowstore\\Willowstore\\wwwroot\\data\\bg.jpg",
+      "PackagePath": "staticwebassets\\data\\bg.jpg"
+    },
+    {
       "Id": "C:\\Users\\nakks\\source\\repos\\Projects\\Willowstore\\Willowstore\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
@@ -27,6 +35,46 @@
     {
       "Id": "C:\\Users\\nakks\\source\\repos\\Projects\\Willowstore\\Willowstore\\wwwroot\\images\\B2\\B2D0\\picture.jpeg",
       "PackagePath": "staticwebassets\\images\\B2\\B2D0\\picture.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\nakks\\source\\repos\\Projects\\Willowstore\\Willowstore\\wwwroot\\images\\home\\Django40-790x500-1.jpg",
+      "PackagePath": "staticwebassets\\images\\home\\Django40-790x500-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nakks\\source\\repos\\Projects\\Willowstore\\Willowstore\\wwwroot\\images\\home\\Horoshij_kod_plohoj_kod-790x500-1.jpg",
+      "PackagePath": "staticwebassets\\images\\home\\Horoshij_kod_plohoj_kod-790x500-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nakks\\source\\repos\\Projects\\Willowstore\\Willowstore\\wwwroot\\images\\home\\Znakomtes-YA-Robot-520x240-2-1.jpg",
+      "PackagePath": "staticwebassets\\images\\home\\Znakomtes-YA-Robot-520x240-2-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nakks\\source\\repos\\Projects\\Willowstore\\Willowstore\\wwwroot\\images\\home\\banner_saryn_520x240.jpg",
+      "PackagePath": "staticwebassets\\images\\home\\banner_saryn_520x240.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nakks\\source\\repos\\Projects\\Willowstore\\Willowstore\\wwwroot\\images\\home\\computers.jpg",
+      "PackagePath": "staticwebassets\\images\\home\\computers.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nakks\\source\\repos\\Projects\\Willowstore\\Willowstore\\wwwroot\\images\\home\\dosug.jpg",
+      "PackagePath": "staticwebassets\\images\\home\\dosug.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nakks\\source\\repos\\Projects\\Willowstore\\Willowstore\\wwwroot\\images\\home\\kids.jpg",
+      "PackagePath": "staticwebassets\\images\\home\\kids.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nakks\\source\\repos\\Projects\\Willowstore\\Willowstore\\wwwroot\\images\\home\\learn.jpg",
+      "PackagePath": "staticwebassets\\images\\home\\learn.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nakks\\source\\repos\\Projects\\Willowstore\\Willowstore\\wwwroot\\images\\home\\sets.jpg",
+      "PackagePath": "staticwebassets\\images\\home\\sets.jpg"
+    },
+    {
+      "Id": "C:\\Users\\nakks\\source\\repos\\Projects\\Willowstore\\Willowstore\\wwwroot\\images\\home\\tech.jpg",
+      "PackagePath": "staticwebassets\\images\\home\\tech.jpg"
     },
     {
       "Id": "C:\\Users\\nakks\\source\\repos\\Projects\\Willowstore\\Willowstore\\wwwroot\\js\\site.js",

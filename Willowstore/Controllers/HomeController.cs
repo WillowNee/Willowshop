@@ -1,24 +1,29 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 using Willowstore.BL.Auth;
+using Willowstore.BL.Catalog;
 using Willowstore.Models;
+using Willowstore.ViewModels;
 
 namespace Willowstore.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
         private readonly ICurrentUser currentUser;
+        private readonly IProduct product;
 
-        public HomeController(ILogger<HomeController> logger, ICurrentUser currentUser)
+        public HomeController(ICurrentUser currentUser, IProduct product)
         {
-            _logger = logger;
             this.currentUser = currentUser;
+            this.product = product;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var newproducts = await product.GetNew(6);
+            return View(
+                new HomePageViewModel { NewProducts = newproducts.ToList() }
+                );
         }
 
         public IActionResult Privacy()

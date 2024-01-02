@@ -1,0 +1,76 @@
+﻿@model Willowstore.BL.Models.CompleteProductDataModel
+
+@{
+    ViewData["Title"] = Model.Product.ProductName;
+}
+
+<div>
+    @if (Model.Categories != null && Model.Categories.Count() > 0)
+    {
+        <div class="breadcrump">
+            @for (int i = Model.Categories.Count - 1; i >= 0; i--)
+            {
+                if (i < Model.Categories.Count - 1)
+                {
+                    <text></text>
+                }
+                <a href="/product-category/@Model.CategoryPath(i)">@Model.Categories[i].CategoryName</a>
+            }
+        </div>
+    }
+
+    <h1>@Model.Product.ProductName</h1>
+    @if (Model.Authors != null && Model.Authors.Count > 0)
+    {
+        <div class="authors-list">
+            Авторы:
+            @foreach (var author in Model.Authors)
+            {
+                <a href="/author/@author.UniqueId">@author.LastName @author.FirstName @author.MiddleName</a>
+            }
+        </div>
+    }
+
+    <div class="row">
+        <div class="col-md-4 order-sm-1">
+            <img src="@Model.Product.ProductImage" alt="@Model.Product.ProductName" class="product-image" />
+        </div>
+
+        <div class="col-md-8 order-sm-0">
+            <table class="table table-striped">
+                <tr>
+                    <td>Год</td>
+                    <td>@Model.Product.ReleaseDate.ToString("dd MM yyyy")</td>
+                </tr>
+
+                @foreach (var detail in Model.ProductDetails)
+                {
+                    <tr>
+                        <td>@detail.ParamName</td>
+                        <td>@detail.StringValue</td>
+                    </tr>
+                }
+            </table>
+
+            <p>@Model.Product.Description</p>
+        </div>
+    </div>
+
+    @if (Model.Authors != null && Model.Authors.Count > 0)
+    {
+        <hr />
+        <h2>Авторы:</h2>
+        <div class="row">
+            @foreach (var author in Model.Authors)
+            {
+                <div class="col-md-2">
+                    <img src="@author.AuthorImage" class="author-image" alt="@author.AuthorImage" />
+                </div>
+                <div class="col-md-10">
+                    <h4><a href="/author/@author.UniqueId">@author.FirstName @author.MiddleName @author.LastName</a></h4>
+                    <p>@author.Description</p>
+                </div>
+            }
+        </div>
+    }
+</div>
